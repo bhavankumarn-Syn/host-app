@@ -8,6 +8,17 @@ declare module 'remoteApp/App' {
   export default Component;
 }
 
+// declare module 'remoteApp/datashare/stateBridge' {
+//   export const anything: any;
+// }
+
 declare module 'remoteApp/datashare/stateBridge' {
-  export const anything: any;
+  export function getCounterValue(): number;
+  export function getCounterValue2(): number;
+
+  export function getToken(): string | null;
+
+  export function subscribeToToken(
+    cb: (token: string | null) => void
+  ): () => void;
 }
